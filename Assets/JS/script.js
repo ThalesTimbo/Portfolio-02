@@ -154,3 +154,5 @@
                 updateCertCarousel();
             }
         });
+
+        // Linguagens de Programação: sem barras de progresso

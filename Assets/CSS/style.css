@@ -1,4 +1,14 @@
 /* Reset e estilos globais */
+:root {
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 12px 48px rgba(0, 206, 209, 0.4);
+    --glass-bg: rgba(26, 26, 26, 0.8);
+    --glass-border: rgba(0, 206, 209, 0.3);
+    --text-primary: #fff;
+    --accent-primary: #00CED1;
+    --transition-smooth: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -86,7 +96,7 @@ nav {
 
 /* Seção Principal (hero) */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,6 +159,26 @@ nav {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
 
@@ -346,7 +376,7 @@ nav {
 
 /* Seção Sobre */
 .about {
-    min-height: 100vh;
+    min-height: 85vh;
     padding: 100px 80px 50px;
     display: flex;
     align-items: center;
@@ -366,12 +396,92 @@ nav {
     color: #fff;
 }
 
+/* Enhanced Home Image */
+.home-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    opacity: 0;
+    animation: fadeInScale 1s ease forwards 0.5s;
+}
+
+.profile-image {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    border: 3px solid var(--glass-border);
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    animation: floatCard 4s ease-in-out infinite;
+    box-shadow: var(--shadow-card);
+    max-width: 180px;
+    line-height: 1.3;
+}
+
+.floating-card span {
+    display: inline-block;
+    word-break: break-word;
+}
+
+.floating-card i {
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+}
+
+.card-1 {
+    top: 5%;
+    right: -10%;
+    animation-delay: 0s;
+    z-index: 1;
+}
+
+.card-2 {
+    bottom: 35%;
+    left: -12%;
+    animation-delay: 1.5s;
+    z-index: 1;
+    max-width: 200px;
+}
+
+.card-3 {
+    bottom: 5%;
+    right: -8%;
+    animation-delay: 3s;
+    z-index: 1;
+}
+
 /* Conteúdo e layout da seção Sobre */
 .about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -458,6 +568,50 @@ blockquote {
     }
 }
 
+/* Integrações (Certificados e Serviços) dentro de Sobre */
+.about-extras {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.about-extras h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.about-certificates .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .about-certificates .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-extras {
+        gap: 40px;
+    }
+    .about-extras h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .about-certificates .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 /* Seção Habilidades / Serviços */
 .skills {
     min-height: 100vh;
@@ -479,6 +633,89 @@ blockquote {
     margin-bottom: 60px;
     color: #fff;
 }
+
+/* Linguagens de Programação */
+.languages {
+    min-height: 100vh;
+    padding: 100px 80px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.languages-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.languages .section-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.language-category {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid rgba(0, 206, 209, 0.15);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.language-category:hover {
+    transform: translateY(-6px);
+    border-color: #00CED1;
+    box-shadow: 0 10px 36px rgba(0, 206, 209, 0.35);
+}
+
+.language-category h3 {
+    color: #00CED1;
+    font-size: 22px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.language-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 18px 16px;
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 8px;
+    border: 1px solid rgba(0, 206, 209, 0.12);
+    border-radius: 14px;
+    background: rgba(0,0,0,0.2);
+}
+
+.language-item i {
+    color: #00CED1;
+    font-size: 40px;
+    width: auto;
+    text-align: center;
+}
+
+.language-item span {
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Reuso dos nomes de barra para manter JS simples */
+/* removidos: barras de progresso para linguagens */
 
 .service-cards {
     display: flex;
@@ -1016,7 +1253,7 @@ blockquote {
 }
 
 /* Seção Certificados */
-.Skills {
+.certificates {
     min-height: 100vh;
     padding: 100px 80px 50px;
     background: #000;
@@ -1027,7 +1264,7 @@ blockquote {
     justify-content: center;
 }
 
-.Skills h2 {
+.certificates h2 {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 60px;
