@@ -564,6 +564,15 @@
             });
         }
 
+        // Hide loader when everything is ready
+        window.addEventListener('load', () => {
+            const pageLoader = document.querySelector('.page-loader');
+            if (pageLoader) {
+                pageLoader.classList.add('hide');
+                setTimeout(() => pageLoader.remove(), 600);
+            }
+        });
+
         // =========================
         // Lazy Loading: Reveal on Scroll
         // =========================
