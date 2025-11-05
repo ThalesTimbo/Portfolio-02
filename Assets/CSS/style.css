@@ -58,6 +58,7 @@ nav {
     display: flex;
     list-style: none;
     gap: 40px;
+    align-items: center;
 }
 
 .nav-menu li a {
@@ -67,6 +68,22 @@ nav {
     font-weight: 400;
     position: relative;
     transition: color 0.3s ease;
+}
+
+/* Ajustes para alinhamento vertical e botão de idioma na navbar */
+.nav-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px; /* mais compacto para combinar com a navbar */
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 999px;
 }
 
 .nav-menu li a::after {

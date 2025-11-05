@@ -1,5 +1,7 @@
 // Animação de Digitação
-        const roles = ['Developer', 'Designer' ];
+        const rolesPT = ['Desenvolvedor', 'Designer'];
+        const rolesEN = ['Developer', 'Designer'];
+        let roles = rolesEN;
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -243,4 +245,321 @@
         // Inicialização
         if (filterButtons.length && langItems.length) {
             showAllLangs();
+        }
+
+        // =========================
+        // Internacionalização (PT/EN)
+        // =========================
+        const i18n = {
+            pt: {
+                nav: ['Home', 'Sobre Mim', 'Habilidades', 'Portfólio', 'Contato'],
+                hero_h3: "Hey, I'm ",
+                hero_p: 'Sou um desenvolvedor apaixonado por criar soluções inovadoras digitais. Com o desenvolvimento web e o\n                    design, você pode fazer o que quiser.',
+                cta_portfolio: 'Conheça meu Portfólio',
+                cta_contact: 'Contato',
+                about_h2: 'Sobre Mim',
+                card1: 'Clean Code',
+                card2: 'Desenvolvedor Web',
+                card3: '+ 2 anos de experiência',
+                about_h3: "Hello, I'm Thales Timbó Fernandes",
+                about_p1: 'Olá! Sou um desenvolvedor web e mobile que gosta de criar soluções práticas, bonitas e funcionais.\n                        Tenho um olhar atento aos detalhes e curto deixar cada projeto com a minha identidade, unindo \n                        criatividade, design e um código bem estruturado. Acredito que um bom trabalho nasce do equilíbrio \n                        entre estética e desempenho.',
+                about_p2: 'A tecnologia sempre me fascinou — especialmente a forma como ela pode transformar ideias em algo real \n                        e acessível. Gosto de aprender novas ferramentas, experimentar linguagens e buscar formas mais eficientes \n                        de resolver problemas. Cada projeto é uma chance de evoluir, de criar algo melhor que o anterior e de \n                        deixar uma marca positiva no que faço.',
+                about_p3: 'Tenho 16 anos e estudo no curso técnico em Informática. Gosto de explorar o mundo da programação, design \n                        e tudo que envolve tecnologia. No meu tempo livre, costumo ouvir música, jogar e aprender coisas novas. \n                        Sou uma pessoa curiosa, que acredita que dedicação e paciência sempre abrem caminho pra algo maior.',
+                quote: '"Um sonho custa caro, mas desistir vai lhe custar um sonho."',
+                btn_curriculo1: 'Curriculo Lattes (Em Breve)',
+                btn_curriculo2: 'Meu Curriculo (Em Breve)',
+                certificados_h2: 'Certificados',
+                cert1_p: 'Design Gráfico - FIAP',
+                cert2_p: 'UX Design - FIAP',
+                cert3_p: 'Cinegrafia - ESCULT ',
+                servicos_h2: 'Serviços',
+                serv1_h3: 'Desenvolvedor Web',
+                serv1_p: 'Crio sites modernos, rápidos e responsivos, sempre \n                                 focando na experiência do usuário e em um design bem estruturado. \n                                 Gosto de escrever códigos limpos e pensar em cada detalhe para \n                                 entregar algo funcional e bonito.',
+                serv2_h3: 'Desenvolvedor Mobile',
+                serv2_p: 'Desenvolvo aplicativos práticos e intuitivos, com foco em performance e \n                                usabilidade. Busco unir tecnologia e design para criar soluções que \n                                realmente façam sentido no dia a dia das pessoas.',
+                serv3_h3: 'Designer de Interfaces',
+                serv3_p: 'Transformo ideias em interfaces visualmente agradáveis e fáceis de usar. \n                                Me preocupo com cada interação e acredito que o design certo pode mudar \n                                completamente a forma como alguém vê um produto.',
+                serv4_h3: 'Designer Gráfico',
+                serv4_p: 'Crio identidades visuais e artes que comunicam de \n                                forma clara e criativa. Gosto de brincar com cores, tipografia e \n                                formas pra dar personalidade a cada projeto.',
+                serv5_h3: 'Fotográfo',
+                serv5_p: 'Registro momentos e emoções com um olhar voltado pra composição e \n                                autenticidade. A fotografia me ajuda a capturar detalhes que contam \n                                histórias de um jeito único.',
+                serv6_h3: 'Gamer',
+                serv6_p: 'Sou apaixonado por jogos e por tudo que envolve esse universo. \n                                Além de me divertir, gosto de observar o design, a mecânica e as \n                                ideias por trás de cada experiência.',
+                langs_h2: 'Linguagens de Programação',
+                filter_all: 'Tudo',
+                filter_front: 'Frontend',
+                filter_back: 'Backend',
+                filter_db: 'Banco de Dados',
+                filter_tools: 'Ferramentas',
+                filter_uiux: 'UI/UX',
+                filter_mobile: 'Mobile',
+                projects_h2: 'Meus Trabalhos',
+                proj1_p: 'Plataforma e-commerce full-stack com autenticação, pagamentos e painel admin.',
+                proj2_p: 'Aplicativo colaborativo de tarefas com drag-and-drop e atualização em tempo real.',
+                proj3_p: 'Dashboard de clima com previsão por localização e visualizações históricas.',
+                proj4_p: 'Portfólio moderno e responsivo com animações e elementos interativos.',
+                proj5_p: 'Plataforma de blog com CMS, gestão de usuários e SEO otimizado.',
+                proj6_p: 'Dashboard de mídias sociais com analytics, agendamento e integrações.',
+                contact_h2: 'Contato',
+                email_h3: 'E-mail',
+                location_h3: 'Guaraciaba do Norte – CE',
+                location_p: 'Ceará, Brasil',
+                availability_h3: 'Disponibilidade',
+                availability_p: 'Aberto a projetos',
+                connect_h3: 'Conecte-se Comigo',
+                form_name_label: 'Nome Completo',
+                form_name_ph: 'Seu nome completo',
+                form_email_label: 'E-mail',
+                form_email_ph: 'seu@email.com',
+                form_subject_label: 'Assunto',
+                form_subject_ph: 'Assunto da mensagem',
+                form_message_label: 'Mensagem',
+                form_message_ph: 'Escreva sua mensagem aqui...',
+                form_button: 'Enviar Mensagem',
+                toggle: 'EN'
+            },
+            en: {
+                nav: ['Home', 'About Me', 'Skills', 'Portfolio', 'Contact'],
+                hero_h3: "Hey, I'm ",
+                hero_p: 'I am a developer passionate about creating innovative digital solutions. With web\n                    development and design, you can build anything you want.',
+                cta_portfolio: 'View my Portfolio',
+                cta_contact: 'Contact',
+                about_h2: 'About Me',
+                card1: 'Clean Code',
+                card2: 'Web Developer',
+                card3: '+ 2 years of experience',
+                about_h3: "Hello, I'm Thales Timbó Fernandes",
+                about_p1: 'Hello! I am a web and mobile developer who enjoys creating practical, beautiful, and functional\n                        solutions. I pay close attention to details and like to give each project my own identity, combining\n                        creativity, design, and well-structured code. I believe good work comes from the balance between\n                        aesthetics and performance.',
+                about_p2: 'Technology has always fascinated me — especially how it can turn ideas into something real and\n                        accessible. I enjoy learning new tools, trying languages, and seeking more efficient ways to solve\n                        problems. Each project is a chance to evolve, to build something better than the last, and to leave\n                        a positive mark on what I do.',
+                about_p3: "I'm 16 years old and currently studying an Informatics technical course. I like exploring the world\n                        of programming, design, and everything involving technology. In my free time, I usually listen to music,\n                        play games, and learn new things. I’m curious and believe dedication and patience always open the way\n                        to something bigger.",
+                quote: '"A dream is expensive, but giving up will cost you a dream."',
+                btn_curriculo1: 'Lattes Resume (Coming Soon)',
+                btn_curriculo2: 'My Resume (Coming Soon)',
+                certificados_h2: 'Certificates',
+                cert1_p: 'Graphic Design - FIAP',
+                cert2_p: 'UX Design - FIAP',
+                cert3_p: 'Cinematography - ESCULT ',
+                servicos_h2: 'Services',
+                serv1_h3: 'Web Developer',
+                serv1_p: 'I build modern, fast, and responsive websites, focusing on user experience and well-structured\n                                 design. I like to write clean code and think through every detail to deliver something functional\n                                 and beautiful.',
+                serv2_h3: 'Mobile Developer',
+                serv2_p: 'I develop practical and intuitive apps with a focus on performance and usability. I aim to combine\n                                technology and design to create solutions that truly make sense in everyday life.',
+                serv3_h3: 'UI Designer',
+                serv3_p: 'I turn ideas into visually pleasing and easy-to-use interfaces. I care about every interaction and\n                                believe the right design can completely change how someone perceives a product.',
+                serv4_h3: 'Graphic Designer',
+                serv4_p: 'I create visual identities and artwork that communicate clearly and creatively. I enjoy playing with\n                                colors, typography, and shapes to give each project its own personality.',
+                serv5_h3: 'Photographer',
+                serv5_p: 'I capture moments and emotions with attention to composition and authenticity. Photography helps me\n                                capture details that tell stories in a unique way.',
+                serv6_h3: 'Gamer',
+                serv6_p: 'I’m passionate about games and everything involving that universe. Besides having fun, I like to\n                                observe the design, mechanics, and ideas behind each experience.',
+                langs_h2: 'Programming Languages',
+                filter_all: 'All',
+                filter_front: 'Frontend',
+                filter_back: 'Backend',
+                filter_db: 'Databases',
+                filter_tools: 'Tools',
+                filter_uiux: 'UI/UX',
+                filter_mobile: 'Mobile',
+                projects_h2: 'My Work',
+                proj1_p: 'Full-stack e-commerce platform with authentication, payments, and admin panel.',
+                proj2_p: 'Collaborative task app with drag-and-drop and real-time updates.',
+                proj3_p: 'Weather dashboard with location-based forecast and historical visualizations.',
+                proj4_p: 'Modern, responsive portfolio with animations and interactive elements.',
+                proj5_p: 'Blog platform with CMS, user management, and optimized SEO.',
+                proj6_p: 'Social media dashboard with analytics, scheduling, and integrations.',
+                contact_h2: 'Contact',
+                email_h3: 'E-mail',
+                location_h3: 'Guaraciaba do Norte – CE',
+                location_p: 'Ceará, Brazil',
+                availability_h3: 'Availability',
+                availability_p: 'Open to projects',
+                connect_h3: 'Connect with Me',
+                form_name_label: 'Full Name',
+                form_name_ph: 'Your full name',
+                form_email_label: 'E-mail',
+                form_email_ph: 'your@email.com',
+                form_subject_label: 'Subject',
+                form_subject_ph: 'Message subject',
+                form_message_label: 'Message',
+                form_message_ph: 'Write your message here...',
+                form_button: 'Send Message',
+                toggle: 'PT'
+            }
+        };
+
+        function applyTranslations(t) {
+            // Nav
+            const navLinksArr = document.querySelectorAll('.nav-menu li a');
+            if (navLinksArr.length >= 5) {
+                navLinksArr[0].textContent = t.nav[0];
+                navLinksArr[1].textContent = t.nav[1];
+                navLinksArr[2].textContent = t.nav[2];
+                navLinksArr[3].textContent = t.nav[3];
+                navLinksArr[4].textContent = t.nav[4];
+            }
+            const toggleBtn = document.querySelector('.lang-toggle');
+            if (toggleBtn) toggleBtn.textContent = t.toggle;
+
+            // Hero
+            const heroH3 = document.querySelector('.hero-content h3');
+            if (heroH3) {
+                const nameSpan = heroH3.querySelector('.name');
+                if (nameSpan) heroH3.innerHTML = `${t.hero_h3}<span class="name">${nameSpan.textContent}</span>`;
+            }
+            const heroP = document.querySelector('.hero-content p');
+            if (heroP) heroP.innerHTML = t.hero_p;
+            const ctas = document.querySelectorAll('.cta-buttons .btn');
+            if (ctas.length >= 2) {
+                ctas[0].textContent = t.cta_portfolio;
+                ctas[1].textContent = t.cta_contact;
+            }
+
+            // Sobre
+            const aboutH2 = document.querySelector('#Sobre h2');
+            if (aboutH2) aboutH2.textContent = t.about_h2;
+            const floatingCards = document.querySelectorAll('.floating-card span');
+            if (floatingCards.length >= 3) {
+                floatingCards[0].textContent = t.card1;
+                floatingCards[1].textContent = t.card2;
+                floatingCards[2].textContent = t.card3;
+            }
+            const aboutH3 = document.querySelector('.about-text h3');
+            if (aboutH3) aboutH3.textContent = t.about_h3;
+            const aboutParas = document.querySelectorAll('.about-text p');
+            if (aboutParas.length >= 3) {
+                aboutParas[0].innerHTML = t.about_p1;
+                aboutParas[1].innerHTML = t.about_p2;
+                aboutParas[2].innerHTML = t.about_p3;
+            }
+            const quote = document.querySelector('blockquote');
+            if (quote) quote.textContent = t.quote;
+            const aboutBtns = document.querySelectorAll('.about-buttons .btn');
+            if (aboutBtns.length >= 2) {
+                aboutBtns[0].textContent = t.btn_curriculo1;
+                aboutBtns[1].textContent = t.btn_curriculo2;
+            }
+
+            // Certificados
+            const certTitle = document.querySelector('.about-certificates h2');
+            if (certTitle) certTitle.textContent = t.certificados_h2;
+            const certPs = document.querySelectorAll('.about-certificates .certificate-card p');
+            if (certPs.length >= 3) {
+                certPs[0].textContent = t.cert1_p;
+                certPs[1].textContent = t.cert2_p;
+                certPs[2].textContent = t.cert3_p;
+            }
+
+            // Serviços
+            const servTitle = document.querySelector('.about-services h2');
+            if (servTitle) servTitle.textContent = t.servicos_h2;
+            const servCards = document.querySelectorAll('.about-services .service-card');
+            if (servCards.length >= 6) {
+                servCards[0].querySelector('h3').textContent = t.serv1_h3;
+                servCards[0].querySelector('p').innerHTML = t.serv1_p;
+                servCards[1].querySelector('h3').textContent = t.serv2_h3;
+                servCards[1].querySelector('p').innerHTML = t.serv2_p;
+                servCards[2].querySelector('h3').textContent = t.serv3_h3;
+                servCards[2].querySelector('p').innerHTML = t.serv3_p;
+                servCards[3].querySelector('h3').textContent = t.serv4_h3;
+                servCards[3].querySelector('p').innerHTML = t.serv4_p;
+                servCards[4].querySelector('h3').textContent = t.serv5_h3;
+                servCards[4].querySelector('p').innerHTML = t.serv5_p;
+                servCards[5].querySelector('h3').textContent = t.serv6_h3;
+                servCards[5].querySelector('p').innerHTML = t.serv6_p;
+            }
+
+            // Linguagens
+            const langsH2 = document.querySelector('#Linguagens .section-title');
+            if (langsH2) langsH2.textContent = t.langs_h2;
+            const filterBtns = document.querySelectorAll('.lang-filters .lang-filter');
+            if (filterBtns.length >= 7) {
+                filterBtns[0].textContent = t.filter_all;
+                filterBtns[1].textContent = t.filter_front;
+                filterBtns[2].textContent = t.filter_back;
+                filterBtns[3].textContent = t.filter_db;
+                filterBtns[4].textContent = t.filter_tools;
+                filterBtns[5].textContent = t.filter_uiux;
+                filterBtns[6].textContent = t.filter_mobile;
+            }
+
+            // Portfólio
+            const projectsH2 = document.querySelector('#Portfólio .section-title');
+            if (projectsH2) projectsH2.textContent = t.projects_h2;
+            const projCards = document.querySelectorAll('.projects-grid .project-card');
+            if (projCards.length >= 6) {
+                projCards[0].querySelector('.project-info p').textContent = t.proj1_p;
+                projCards[1].querySelector('.project-info p').textContent = t.proj2_p;
+                projCards[2].querySelector('.project-info p').textContent = t.proj3_p;
+                projCards[3].querySelector('.project-info p').textContent = t.proj4_p;
+                projCards[4].querySelector('.project-info p').textContent = t.proj5_p;
+                projCards[5].querySelector('.project-info p').textContent = t.proj6_p;
+            }
+
+            // Contato
+            const contactH2 = document.querySelector('#Contato h2');
+            if (contactH2) contactH2.textContent = t.contact_h2;
+            const emailH3 = document.querySelector('.info-card:nth-child(1) .info-content h3');
+            if (emailH3) emailH3.textContent = t.email_h3;
+            const locationH3 = document.querySelector('.info-card:nth-child(2) .info-content h3');
+            if (locationH3) locationH3.textContent = t.location_h3;
+            const locationP = document.querySelector('.info-card:nth-child(2) .info-content p');
+            if (locationP) locationP.textContent = t.location_p;
+            const availH3 = document.querySelector('.info-card:nth-child(3) .info-content h3');
+            if (availH3) availH3.textContent = t.availability_h3;
+            const availP = document.querySelector('.info-card:nth-child(3) .info-content p');
+            if (availP) availP.textContent = t.availability_p;
+            const connectH3 = document.querySelector('.connect-card h3');
+            if (connectH3) connectH3.textContent = t.connect_h3;
+
+            const nameLabel = document.querySelector('label[for="name"]');
+            const nameInput = document.getElementById('name');
+            if (nameLabel) nameLabel.textContent = t.form_name_label;
+            if (nameInput) nameInput.placeholder = t.form_name_ph;
+
+            const emailLabel = document.querySelector('label[for="email"]');
+            const emailInput = document.getElementById('email');
+            if (emailLabel) emailLabel.textContent = t.form_email_label;
+            if (emailInput) emailInput.placeholder = t.form_email_ph;
+
+            const subjectLabel = document.querySelector('label[for="subject"]');
+            const subjectInput = document.getElementById('subject');
+            if (subjectLabel) subjectLabel.textContent = t.form_subject_label;
+            if (subjectInput) subjectInput.placeholder = t.form_subject_ph;
+
+            const messageLabel = document.querySelector('label[for="message"]');
+            const messageInput = document.getElementById('message');
+            if (messageLabel) messageLabel.textContent = t.form_message_label;
+            if (messageInput) messageInput.placeholder = t.form_message_ph;
+
+            const submitBtn = document.querySelector('.contact-submit');
+            if (submitBtn) {
+                // Preserve icon inside
+                const icon = submitBtn.querySelector('i');
+                submitBtn.textContent = t.form_button + ' ';
+                if (icon) submitBtn.appendChild(icon);
+            }
+        }
+
+        function setLanguage(lang) {
+            const dict = i18n[lang] || i18n.pt;
+            applyTranslations(dict);
+            // Update roles for typing effect
+            roles = lang === 'en' ? rolesEN : rolesPT;
+            localStorage.setItem('site_lang', lang);
+        }
+
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('site_lang') || 'pt';
+            setLanguage(saved);
+        });
+
+        // Toggle button
+        const langToggleBtn = document.querySelector('.lang-toggle');
+        if (langToggleBtn) {
+            langToggleBtn.addEventListener('click', () => {
+                const current = localStorage.getItem('site_lang') || 'pt';
+                const next = current === 'pt' ? 'en' : 'pt';
+                setLanguage(next);
+            });
         }
