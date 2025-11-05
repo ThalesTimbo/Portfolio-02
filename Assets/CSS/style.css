@@ -602,7 +602,7 @@ blockquote {
 
 .about-certificates .certificate-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 420px;
 }
 
 @media (max-width: 1024px) {
@@ -1342,10 +1342,10 @@ blockquote {
 
 .certificate-card {
     position: relative;
-    width: 300px;
-    height: 200px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border-radius: 0;
+    width: 100%;
+    max-width: 420px;
+    background: #0f0f0f;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 206, 209, 0.3);
     transition: all 0.3s ease;
@@ -1374,8 +1374,10 @@ blockquote {
 
 .certificate-img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #fff;
 }
 
 .certificate-card p {
@@ -1525,7 +1527,7 @@ blockquote {
     }
 
     .certificate-img {
-        height: 150px;
+        height: auto;
     }
 
     .certificates-grid {
