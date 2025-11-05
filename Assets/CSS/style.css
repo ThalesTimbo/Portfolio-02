@@ -584,17 +584,31 @@ blockquote {
     color: #fff;
 }
 
+.about-certificates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-certificates .certificates-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    justify-items: center;
+}
+
+.about-certificates .certificate-card {
+    width: 100%;
+    max-width: 300px;
 }
 
 @media (max-width: 1024px) {
     .about-certificates .certificates-grid {
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
     }
 }
 
@@ -609,6 +623,7 @@ blockquote {
     .about-certificates .certificates-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        justify-items: center;
     }
 }
 

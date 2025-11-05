@@ -1,5 +1,5 @@
 // Animação de Digitação
-        const roles = ['Developer', 'Designer'];
+        const roles = ['Developer', 'Designer' ];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
