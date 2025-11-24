@@ -26,7 +26,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Loader overlay container */
+/*  */
 .page-loader {
     position: fixed;
     top: 0;
@@ -187,9 +187,7 @@ body {
   }
 }
 
-/* =========================
-   Lazy Loading Reveal Animations
-   ========================= */
+/* Lazy Loading animaçoes */
 .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -212,7 +210,7 @@ body {
     filter: none;
 }
 
-/* Stagger helper via CSS variable */
+/* Auxiliar de escalonamento via variável do CSS */
 .reveal { transition-delay: var(--reveal-delay, 0ms); }
 
 /* Accessibility: minimize animations if user prefers reduced motion */
@@ -882,7 +880,6 @@ blockquote {
     color: #fff;
 }
 
-/* Nova seção de linguagens com filtros */
 .lang-filters {
     display: flex;
     flex-wrap: wrap;
@@ -987,8 +984,6 @@ blockquote {
     font-size: 14px;
 }
 
-/* Reuso dos nomes de barra para manter JS simples */
-/* removidos: barras de progresso para linguagens */
 
 .service-cards {
     display: flex;
@@ -1132,7 +1127,7 @@ blockquote {
     }
 }
 
-/* Breakpoint: Tablets e menores */
+/* Breakpoint: Tablets e telas menores */
 @media (max-width: 768px) {
     nav {
         padding: 20px 30px;
@@ -1302,7 +1297,7 @@ blockquote {
         font-size: 12px;
     }
 
-    /* Linguagens: responsividade */
+    /* Linguagens: responsividade de novo kkkk*/
     .languages {
         padding: 80px 30px 40px;
     }
@@ -1397,7 +1392,8 @@ blockquote {
         font-size: 16px;
     }
 
-    /* Linguagens: telas pequenas */
+    /* Linguagens: telas pequenas mds, que bagunça*/
+
     .languages {
         padding: 70px 20px 36px;
     }
@@ -1570,6 +1566,7 @@ blockquote {
 }
 
 /* Seção Certificados */
+
 .certificates {
     min-height: 100vh;
     padding: 100px 80px 50px;
@@ -1661,7 +1658,8 @@ blockquote {
     margin-bottom: 60px;
 }
 
-/* Grid de cartões + formulário */
+/* Grid de cartões e o formulário */
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1.1fr 1.4fr;
@@ -1934,6 +1932,7 @@ blockquote {
 }
 
 /* Responsividade extra para telas pequenas */
+/* como pode ela ser tão linda ? */
 @media (max-width: 600px) {
     .contact { padding: 80px 24px 40px; }
     .info-card, .connect-card, .form-card { padding: 18px; }

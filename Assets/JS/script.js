@@ -46,7 +46,7 @@
                 const circumference = 2 * Math.PI * 50;
                 const offset = circumference - (percentage / 100) * circumference;
 
-                // Circulo cheio
+                // Circulo cheio (imagem da capa)
                 circle.style.strokeDashoffset = circumference;
 
                 // Animação até o deslocamento máximo
@@ -86,7 +86,7 @@
 
         window.addEventListener('scroll', updateActiveLink);
         window.addEventListener('hashchange', updateActiveLink);
-        // Atualiza estado ativo no carregamento
+        // Atualiza estado ativo no carregamento (quando a página é carregada)
         document.addEventListener('DOMContentLoaded', updateActiveLink);
 
         navLinks.forEach(link => {
@@ -108,7 +108,7 @@
             });
         }
 
-        // Hamburger menu 
+        // menu hamburguer
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('nav');
 
@@ -119,7 +119,7 @@
 
 
 
-        // Formulário de contato com FormSubmit (AJAX - sem redirecionamento)
+        // Formulário de contato com FormSubmit (AJAX  sem o redirecionamento)
         const contactForm = document.getElementById('contactForm');
         const submitBtn = contactForm.querySelector('.contact-submit');
 
@@ -130,7 +130,7 @@
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // Validação simples
+            // Validação (bem simples)
             if (!name || !email || !message) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
@@ -147,7 +147,7 @@
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
-                    redirect: 'manual' // Não seguir redirects - previne redirecionamento automático
+                    redirect: 'manual' // Não seguir redirects, previne o redirecionamento automático
                 });
 
                 // FormSubmit retorna status 302 (redirect) quando bem-sucedido
@@ -218,13 +218,12 @@
             });
         }
 
-        // Linguagens de Programação: sem barras de progresso
         
         // Interações da seção Linguagens: filtros e animações
         const filterButtons = document.querySelectorAll('.lang-filter');
         const langItems = document.querySelectorAll('.lang-item');
 
-        // Mostrar todos ao carregar com animação suave
+        // Mostrar todos ao carregar com animação suave e bonita (igual ela)
         function showAllLangs() {
             langItems.forEach((item, idx) => {
                 item.style.display = 'flex';
@@ -232,7 +231,7 @@
             });
         }
 
-        // Filtragem por categoria
+        // Filtrar por categoria
         function applyFilter(category) {
             langItems.forEach((item, idx) => {
                 const match = category === 'all' || item.dataset.category === category;
@@ -246,7 +245,7 @@
             });
         }
 
-        // Atualiza botão ativo + aplica filtro
+        // Atualiza botão ativo 
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterButtons.forEach(b => b.classList.remove('active'));
@@ -256,7 +255,7 @@
             });
         });
 
-        // Hover com efeito de spotlight acompanhando o mouse
+        // Hover com efeito de spotlight acompanhando o mouse pelos negocios
         langItems.forEach(item => {
             item.addEventListener('mousemove', (e) => {
                 const rect = item.getBoundingClientRect();
@@ -285,9 +284,8 @@
             showAllLangs();
         }
 
-        // =========================
         // Internacionalização (PT/EN)
-        // =========================
+        // textos em br
         const i18n = {
             pt: {
                 nav: ['Home', 'Sobre Mim', 'Habilidades', 'Portfólio', 'Contato'],
@@ -310,7 +308,7 @@
                 cert1_p: 'Design Gráfico - FIAP',
                 cert2_p: 'UX Design - FIAP',
                 cert3_p: 'Cinegrafia - ESCULT ',
-                servicos_h2: 'Serviços',
+                servicos_h2: 'Habilidades',
                 serv1_h3: 'Desenvolvedor Web',
                 serv1_p: 'Crio sites modernos, rápidos e responsivos, sempre \n                                 focando na experiência do usuário e em um design bem estruturado. \n                                 Gosto de escrever códigos limpos e pensar em cada detalhe para \n                                 entregar algo funcional e bonito.',
                 serv2_h3: 'Desenvolvedor Mobile',
@@ -356,6 +354,7 @@
                 form_button: 'Enviar Mensagem',
                 toggle: 'EN'
             },
+            // textos em ingleies
             en: {
                 nav: ['Home', 'About Me', 'Skills', 'Portfolio', 'Contact'],
                 hero_h3: "Hey, I'm ",
@@ -377,7 +376,7 @@
                 cert1_p: 'Graphic Design - FIAP',
                 cert2_p: 'UX Design - FIAP',
                 cert3_p: 'Cinematography - ESCULT ',
-                servicos_h2: 'Services',
+                servicos_h2: 'Habilitys',
                 serv1_h3: 'Web Developer',
                 serv1_p: 'I build modern, fast, and responsive websites, focusing on user experience and well-structured\n                                 design. I like to write clean code and think through every detail to deliver something functional\n                                 and beautiful.',
                 serv2_h3: 'Mobile Developer',
@@ -426,7 +425,7 @@
         };
 
         function applyTranslations(t) {
-            // Nav
+            // Nav menu
             const navLinksArr = document.querySelectorAll('.nav-menu li a');
             if (navLinksArr.length >= 5) {
                 navLinksArr[0].textContent = t.nav[0];
@@ -571,7 +570,7 @@
 
             const submitBtn = document.querySelector('.contact-submit');
             if (submitBtn) {
-                // Preserve icon inside
+                //botão de enviar a mensagem
                 const icon = submitBtn.querySelector('i');
                 submitBtn.textContent = t.form_button + ' ';
                 if (icon) submitBtn.appendChild(icon);
@@ -581,18 +580,18 @@
         function setLanguage(lang) {
             const dict = i18n[lang] || i18n.pt;
             applyTranslations(dict);
-            // Update roles for typing effect
+            // Atualiza o efeito de digitação
             roles = lang === 'en' ? rolesEN : rolesPT;
             localStorage.setItem('site_lang', lang);
         }
 
-        // Initialize language
+        // Ilinguagens
         document.addEventListener('DOMContentLoaded', () => {
             const saved = localStorage.getItem('site_lang') || 'pt';
             setLanguage(saved);
         });
 
-        // Toggle button
+        // Toggle botão
         const langToggleBtn = document.querySelector('.lang-toggle');
         if (langToggleBtn) {
             langToggleBtn.addEventListener('click', () => {
@@ -602,7 +601,7 @@
             });
         }
 
-        // Hide loader when everything is ready
+        // tela de carregamento 
         window.addEventListener('load', () => {
             const pageLoader = document.querySelector('.page-loader');
             if (pageLoader) {
@@ -611,9 +610,8 @@
             }
         });
 
-        // =========================
-        // Lazy Loading: Reveal on Scroll
-        // =========================
+        // Lazy Loading
+
         function markReveal(elements, variant = 'reveal-up', baseDelay = 60) {
             if (!elements) return;
             const arr = elements instanceof NodeList || Array.isArray(elements) ? elements : [elements];
@@ -641,7 +639,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Hero
+            // seção principal
             markReveal(document.querySelector('.hero-content h3'), 'reveal-up', 0);
             markReveal(document.querySelector('.hero-content h1'), 'reveal-up', 0);
             markReveal(document.querySelector('.hero-content p'), 'reveal-up', 0);
@@ -680,10 +678,8 @@
             markReveal(document.querySelector('.about-certificates h2'), 'reveal-up', 0);
             markReveal(document.querySelectorAll('.about-certificates .certificate-card'), 'reveal-up', 80);
 
-            // Observe all reveals
             observeReveal(document.querySelectorAll('.reveal'));
 
-            // Lazy attribute for images (skip very first above-the-fold if needed)
             const allImgs = document.querySelectorAll('img');
             allImgs.forEach((img, idx) => {
                 if (!img.hasAttribute('loading')) {
